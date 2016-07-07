@@ -1,5 +1,5 @@
 from turtle import Turtle
-default_scale = 5
+default_scale = 10
 
 def init_drawman():
     ''' Инициализация черепашки '''
