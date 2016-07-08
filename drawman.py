@@ -67,16 +67,17 @@ def to_point(x, y):
     t.goto(_drawman_scale*x_current, _drawman_scale*y_current)
 
 def col(c='red'):
+
     ''' Цвет'''
     global t
     t.pencolor(c)
 
 def size():
-     '''Размеры холста'''
-     global t,w,h, _drawman_scale
-     w=600*_drawman_scale
-     h=400*_drawman_scale
-     t.screen.screensize(w,h)
+    '''Размеры холста'''
+    global t,w,h, _drawman_scale
+    w=600*_drawman_scale
+    h=400*_drawman_scale
+    t.screen.screensize(w,h)
 
 def pen_width(w=2):
     '''Ширина пера'''
@@ -182,6 +183,7 @@ def edin():
     coords=" "+str(y)
     t.goto(x, y*_drawman_scale)
     t.write(coords)
+    t.speed(1)
 
 
 
