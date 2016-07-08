@@ -1,5 +1,5 @@
 from turtle import Turtle
-default_scale = 2
+default_scale = 4
 
 def init_drawman():
     ''' Инициализация черепашки '''
@@ -157,16 +157,17 @@ def edin():
     # print ('Вошли в шаг')
     t.color('#000000')
     t.up()
-    x=shag
+    edin=50 # Единичный отрезок типо
+    x=edin
     y=0
     coords=" "+str(x)
-    t.goto(x, y)
+    t.goto(x*_drawman_scale, y)
     # t.down()
     t.write(coords)
     x=0
-    y=shag
+    y=edin
     coords=" "+str(y)
-    t.goto(x, y)
+    t.goto(x, y*_drawman_scale)
     t.write(coords)
 
 
@@ -175,4 +176,5 @@ if __name__ == '__main__':
     import time # Отсюда вынимаем sleep(sec.)
     '''  Вызываем функцию тестирования чертежника в главно модуле '''
     test_drawman()
-    time.sleep(3)
+    # t.mainloop()
+    time.sleep(8)
