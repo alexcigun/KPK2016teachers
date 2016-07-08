@@ -20,6 +20,7 @@ def test_drawman():
     """
     Тестирование работы Чертёжника
     """
+    novid()
     col()
     size()
     axis()
@@ -38,10 +39,20 @@ def test_drawman():
     # Возврат в начало
     to_point(0, 0)
 
+def novid():
+    global t
+    t.hideturtle()
+
+def vid():
+    global t
+    t.showtirtle()
+
 def pen_down():
+    global t
     t.pendown()
 
 def pen_up():
+    global t
     t.penup()
 
 def on_vector(dx, dy):
@@ -61,96 +72,98 @@ def col(c='red'):
     t.pencolor(c)
 
 def size():
+     '''Размеры холста'''
      global t,w,h, _drawman_scale
      w=600*_drawman_scale
      h=400*_drawman_scale
      t.screen.screensize(w,h)
 
 def pen_width(w=2):
+    '''Ширина пера'''
     global t
     t.width(w)
 
 def axis():
-     global t,w,h,_drawman_scale
-     pass
-     t.turtlesize(2)
+    global t,w,h,_drawman_scale
+    pass
+    t.turtlesize(2)
     # Вертикальные линии
-     t.width(3)
-     t.home()
+    t.width(3)
+    t.home()
 
     # Горизонтальные линии
      # t.reset()
      # t.tracer(0)
-     t.color('#000000')
+    t.color('#000000')
 #
-     t.write('  0,0')
+    t.write('  0,0')
 #
-     x=0
-     y=-h/2
-     coords=" "+str(x)+", "+str(y)
-     t.goto(x, y)
-     t.write(coords)
+    x=0
+    y=-h/2
+    coords=" "+str(x)+", "+str(y)
+    t.goto(x, y)
+    t.write(coords)
 
 #    Начинаем оси рисовать
-     t.down()
-     x=0
-     y=h/2
-     coords=str(x)+", "+str(y)
-     t.goto(x, y)
-     t.left(90)
-     t.stamp()
-     t.right(90)
-     t.write(coords)
+    t.down()
+    x=0
+    y=h/2
+    coords=str(x)+", "+str(y)
+    t.goto(x, y)
+    t.left(90)
+    t.stamp()
+    t.right(90)
+    t.write(coords)
 #
-     t.up()
-     x=-w/2
-     y=0
-     coords=str(x)+", "+str(y)
-     t.goto(x, y)
-     t.write(coords)
+    t.up()
+    x=-w/2
+    y=0
+    coords=str(x)+", "+str(y)
+    t.goto(x, y)
+    t.write(coords)
 #
-     t.down()
-     x=w/2
-     y=0
-     coords=str(x)+", "+str(y)
-     t.goto(x, y)
+    t.down()
+    x=w/2
+    y=0
+    coords=str(x)+", "+str(y)
+    t.goto(x, y)
 
-     t.stamp()
-     t.write(coords)
+    t.stamp()
+    t.write(coords)
 #
 def grid():
-     global t,w,h,_drawman_scale,shag
-     pass
-     t.width(1)
-     t.speed(10)
+    global t,w,h,_drawman_scale,shag
+    pass
+    t.width(1)
+    t.speed(10)
      # Вертикальные линии
-     shag=50*_drawman_scale
-     x=-w/2
-     y=h/2
-     col('gray')
-     while x<=w/2:
-         t.up()
-         t.goto(x,y)
-         t.down()
-         if x!=0:
-             t.goto(x,-h/2)
-         x+=shag
-     else:
-         t.up()
+    shag=50*_drawman_scale
+    x=-w/2
+    y=h/2
+    col('gray')
+    while x<=w/2:
+        t.up()
+        t.goto(x,y)
+        t.down()
+        if x!=0:
+            t.goto(x,-h/2)
+        x+=shag
+    else:
+        t.up()
 
      # Горизонтальные линии
-     x=-w/2
-     y=h/2
-     # col('gray')
-     while y>=-h/2:
-         t.up()
-         t.goto(x,y)
-         t.down()
-         if y!=0:
-             t.goto(w/2,y)
-         y-=shag
-     else:
-         t.up()
+    x=-w/2
+    y=h/2
+    # col('lightngray')
+    while y>=-h/2:
+        t.up()
+        t.goto(x,y)
+        t.down()
+        if y!=0:
+            t.goto(w/2,y)
+        y-=shag
+    else:
+        t.up()
 
 def edin():
     global t,w,h,_drawman_scale,shag
@@ -169,6 +182,7 @@ def edin():
     coords=" "+str(y)
     t.goto(x, y*_drawman_scale)
     t.write(coords)
+
 
 
 init_drawman()
