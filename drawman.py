@@ -1,5 +1,5 @@
 from turtle import Turtle
-default_scale = 10
+default_scale = 5
 
 def init_drawman():
     ''' Инициализация черепашки '''
@@ -61,9 +61,9 @@ def col(c='red'):
     t.pencolor(c)
 
 def size():
-     global t,w,h
-     w=800
-     h=600
+     global t,w,h, _drawman_scale
+     w=600*_drawman_scale
+     h=400*_drawman_scale
      t.screen.screensize(w,h)
 
 def pen_width(w=2):
@@ -124,7 +124,7 @@ def grid():
      t.width(1)
      t.speed(10)
      # Вертикальные линии
-     shag=50
+     shag=50*_drawman_scale
      x=-w/2
      y=h/2
      col('gray')
