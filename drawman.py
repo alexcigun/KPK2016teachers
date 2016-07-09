@@ -45,7 +45,7 @@ def novid():
 
 def vid():
     global t
-    t.showtirtle()
+    t.showtirtle()# ошибка? = t.showturtle()
 
 def pen_down():
     global t
