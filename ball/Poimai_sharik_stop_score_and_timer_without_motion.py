@@ -165,7 +165,7 @@ def click_ball(event):
 
 def time_event():
     global balls, w,h
-    print('*')
+    # print('*')
     """ передвигает все шарики на чуть-чуть """
     for b in balls:
         if b.nx==1 and b.ny == 1:
