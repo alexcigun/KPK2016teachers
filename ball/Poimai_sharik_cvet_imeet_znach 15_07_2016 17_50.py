@@ -81,9 +81,7 @@ def create_scores_text():
 def change_scores_text():
     canv.itemconfigure(scores_text, text="Ваши очёчки: " + str(scores))
  
-for b in balls:
-    b.paint()
-    # print(b.id)
+
 
 def click_ball(event):
     global scores, w, h, balls, flag_t
@@ -208,6 +206,9 @@ for z in range(20):
                   'pink', 'purple', 'red','yellow', 'violet', 'indigo', 'chartreuse', 'lime'])
     balls += [new_ball]
 
+for b in balls:
+    b.paint()
+    # print(b.id)
 create_scores_text()
 create_timer()
 delay=1000
